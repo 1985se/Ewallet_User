@@ -10,9 +10,9 @@
         <StackLayout>
             <Grid HorizontalOptions="CenterAndExpand" 
                   VerticalOptions="Start">
-                <Grid.GestureRecognizers>
+                <!--<Grid.GestureRecognizers>
                     <TapGestureRecognizer Command=""/>
-                </Grid.GestureRecognizers>
+                </Grid.GestureRecognizers>-->
                 <Image Source="arrowleft"
                        Grid.Column="0"
                        HorizontalOptions="Start"
