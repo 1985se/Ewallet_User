@@ -1,4 +1,5 @@
-﻿using EwalletApp.Views;
+﻿using EwalletApp.ViewModels;
+using EwalletApp.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,7 +13,8 @@ namespace EwalletApp
             InitializeComponent();
 
             // MainPage = new MainPage();
-            MainPage = new NavigationPage(new Login());
+            LoginVM vM = new LoginVM();
+            MainPage = new NavigationPage(new Login(vM));
         }
 
         protected override void OnStart()

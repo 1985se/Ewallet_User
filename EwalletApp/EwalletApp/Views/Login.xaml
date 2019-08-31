@@ -5,8 +5,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:control="clr-namespace:EwalletApp.Control"
+             xmlns:bd="clr-namespace:EwalletApp.ViewModels"
              NavigationPage.HasNavigationBar="False"
              x:Class="EwalletApp.Views.Login">
+    <!--<ContentPage.BindingContext>
+        <bd:LoginVM/>
+    </ContentPage.BindingContext>-->
     <ContentPage.Content>       
             <Grid>
                 <Image Source="splash" Grid.Column="0"
@@ -22,21 +26,39 @@
                     <Image Source="wallet"
                            HeightRequest="80"
                            WidthRequest="80"
-                           Margin="0,0,0,15"
+                           Margin="0,0,0,35"
                            HorizontalOptions="Center"
                            VerticalOptions="Center"/>
+                    <Label Text="{Binding StatusEmailVerdify}"
+                           Margin="50,0,50,0"
+                           TextColor="Black"/>
 
                     <control:RoundedEntry 
                         Placeholder="Email"
                         HeightRequest="55"
+                        Text="{Binding Email}"
                            WidthRequest="300"
-                           Margin="50,30,50,20" />
-                    
-                    <Button Text="SIGN IN" 
+                           Margin="50,5,50,20" />
+                    <Label Text="{Binding ErrorMessage}" 
+                           TextColor="Red"
+                           Margin="50,0,0,0"/>
+
+                    <Grid>
+
+                        <Button Text="SIGN IN"  Grid.Column="0"
                             CornerRadius="10"
                             TextColor="White"
+                            Command="{Binding OnClickSingInCommand}"
+                            IsEnabled="{Binding ActiveButton}"
                             BackgroundColor="#eaa200"
                             Margin="50,5,50,0"/>
+                        <ActivityIndicator Color="White" 
+                                           Grid.Column="0"
+                                           IsRunning="True" 
+                                           IsVisible="{Binding Indicator}"/>
+                        
+                    </Grid>
+                   
 
                 </StackLayout>
                 
