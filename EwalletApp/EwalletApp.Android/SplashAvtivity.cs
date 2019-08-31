@@ -33,7 +33,7 @@ namespace EwalletApp.Droid
         async void SimulateStartup()
         {
             
-            await Task.Delay(2000); // Simulate a bit of startup work.            
+            await Task.Delay(500); // Simulate a bit of startup work.            
             StartActivity(new Intent(Application.Context, typeof(MainActivity)));
         }
 

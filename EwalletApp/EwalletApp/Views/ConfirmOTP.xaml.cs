@@ -1,5 +1,4 @@
-﻿using EwalletApp.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,13 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace EwalletApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Login : ContentPage
+    public partial class ConfirmOTP : ContentPage
     {
-        LoginVM _vM;
-        public Login(LoginVM vM)
+        public ConfirmOTP()
         {
             InitializeComponent();
-            BindingContext = _vM = vM;
         }
     }
 }
