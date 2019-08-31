@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:control="clr-namespace:EwalletApp.Control"
              NavigationPage.HasNavigationBar="False"
              x:Class="EwalletApp.Views.Login">
     <ContentPage.Content>       
@@ -24,10 +25,13 @@
                            Margin="0,0,0,15"
                            HorizontalOptions="Center"
                            VerticalOptions="Center"/>
-                    <Entry Placeholder="Email" 
+
+                    <control:RoundedEntry 
+                        Placeholder="Email"
+                        HeightRequest="55"
                            WidthRequest="300"
-                           Margin="50,30,50,20"
-                           BackgroundColor="White"/>
+                           Margin="50,30,50,20" />
+                    
                     <Button Text="SIGN IN" 
                             CornerRadius="10"
                             TextColor="White"
