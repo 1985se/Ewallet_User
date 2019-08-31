@@ -25,12 +25,18 @@ namespace EwalletApp.ViewModels
         {
             Indicator = true;
             ActiveButton = false;
-            ValidateEmail();
+            toConfirmOTP();
+            // ValidateEmail();
             Indicator = false;
             ActiveButton = true;
 
 
 
+        }
+
+        private async void toConfirmOTP()
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new Views.ConfirmOTP());
         }
 
         private async void ValidateEmail()

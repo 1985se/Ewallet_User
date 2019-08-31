@@ -4,12 +4,144 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
              x:Class="EwalletApp.Views.ConfirmOTP">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Grid HorizontalOptions="CenterAndExpand" 
+                  VerticalOptions="Start">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command=""/>
+                </Grid.GestureRecognizers>
+                <Image Source="arrowleft"
+                       Grid.Column="0"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Start"
+                       Aspect="AspectFit"
+                       HeightRequest="40"
+                       WidthRequest="30"
+                       Margin="15,10,0,0"/>
+                <Label Text="ยืนยัน OTP" 
+                        Grid.Column="0"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="Center"
+                       FontSize="15"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       Margin="0,20,0,0"/>
+            </Grid>
+            
+            <ScrollView VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand">
+                <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            </ScrollView>
+            <StackLayout BackgroundColor="#EAA200" 
+                         VerticalOptions="End"
+                         Margin="0,0,0,0"
+                         Padding="5,5,5,25"
+                         HorizontalOptions="CenterAndExpand">
+                
+                <!--key pad--> 
+                
+                <Grid>
+                    <!--row 0-->
+                    <Button Text="1" 
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            FontSize="25"
+                            BackgroundColor="#EAA200"/>
+                    <Button Text="2" 
+                            Grid.Row="0"
+                            Grid.Column="1"
+                             TextColor="White"
+                            FontAttributes="Bold"
+                            FontSize="25"
+                            BackgroundColor="#EAA200"/>
+                    <Button Text="3" 
+                            Grid.Row="0"
+                            Grid.Column="2"
+                             TextColor="White"
+                            FontAttributes="Bold"
+                            FontSize="25"
+                            BackgroundColor="#EAA200"/>
+                    <!--row 1-->
+                    <Button Text="4" 
+                            Grid.Row="1"
+                            Grid.Column="0"
+                             TextColor="White"
+                            FontAttributes="Bold"
+                            FontSize="25"
+                            BackgroundColor="#EAA200"/>
+                    <Button Text="5" 
+                            Grid.Row="1"
+                            Grid.Column="1"
+                             TextColor="White"
+                            FontAttributes="Bold"
+                            FontSize="25"
+                            BackgroundColor="#EAA200"/>
+                    <Button Text="6" 
+                            Grid.Row="1"
+                            Grid.Column="2"
+                             TextColor="White"
+                            FontAttributes="Bold"
+                            FontSize="25"
+                            BackgroundColor="#EAA200"/>
+                    <!--row 3-->
+                    <Button Text="6" 
+                            Grid.Row="2"
+                            Grid.Column="0"
+                             TextColor="White"
+                            FontAttributes="Bold"
+                            FontSize="25"
+                            BackgroundColor="#EAA200"/>
+                    <Button Text="7" 
+                            Grid.Row="2"
+                            Grid.Column="1"
+                             TextColor="White"
+                            FontAttributes="Bold"
+                            FontSize="25"
+                            BackgroundColor="#EAA200"/>
+                    <Button Text="8" 
+                            Grid.Row="2"
+                            Grid.Column="2"
+                             TextColor="White"
+                            FontAttributes="Bold"
+                            FontSize="25"
+                            BackgroundColor="#EAA200"/>
+                    <!--row 3-->
+                    <Button Text=" " 
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            TextColor="White"
+                            IsVisible="False"
+                            FontAttributes="Bold"
+                            FontSize="25"
+                            BackgroundColor="#EAA200"/>
+                    <Button Text="0" 
+                            Grid.Row="3"
+                            Grid.Column="1"
+                             TextColor="White"
+                            FontSize="25"
+                            FontAttributes="Bold"
+                            BackgroundColor="#EAA200"/>
+                    <Button Text="←" 
+                            Grid.Row="3"
+                            Grid.Column="2"
+                             TextColor="White"
+                            FontSize="30"
+                            FontAttributes="Bold"
+                            BackgroundColor="#EAA200"/>
+
+
+                </Grid>
+                
+                
+            </StackLayout>
         </StackLayout>
+       
     </ContentPage.Content>
 </ContentPage>

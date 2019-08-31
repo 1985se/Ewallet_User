@@ -31,7 +31,7 @@
                            VerticalOptions="Center"/>
                     <Label Text="{Binding StatusEmailVerdify}"
                            Margin="50,0,50,0"
-                           TextColor="Black"/>
+                           TextColor="Red"/>
 
                     <control:RoundedEntry 
                         Placeholder="Email"
