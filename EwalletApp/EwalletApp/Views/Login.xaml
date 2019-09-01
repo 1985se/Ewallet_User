@@ -8,9 +8,9 @@
              xmlns:bd="clr-namespace:EwalletApp.ViewModels"
              NavigationPage.HasNavigationBar="False"
              x:Class="EwalletApp.Views.Login">
-    <!--<ContentPage.BindingContext>
+    <ContentPage.BindingContext>
         <bd:LoginVM/>
-    </ContentPage.BindingContext>-->
+    </ContentPage.BindingContext>
     <ContentPage.Content>       
             <Grid>
                 <Image Source="splash" Grid.Column="0"

@@ -25,8 +25,10 @@ namespace EwalletApp.ViewModels
         {
             Indicator = true;
             ActiveButton = false;
-            toConfirmOTP();
+            //toConfirmOTP();
             // ValidateEmail();
+            //AdminLogin();
+            AdminLogin();
             Indicator = false;
             ActiveButton = true;
 
@@ -34,35 +36,33 @@ namespace EwalletApp.ViewModels
 
         }
 
-        private async void toConfirmOTP()
-        {
-            await Application.Current.MainPage.Navigation.PushAsync(new Views.Home());
-        }
+      
+       
 
-        private async void ValidateEmail()
+        private async void AdminLogin()
         {
-            string Url = Constants.OpenApiEndpoint+ "/User/ValidateEmail";
+            string Url = Constants.OpenApiEndpoint+ "admin/login";
+           // string Url = Constants.OpenApiEndpoint + "Admin/valus";
             var uri = new Uri(Url);
             HttpClient _client = new HttpClient();
-            EmailValidate userPass = new EmailValidate {Email = Email };
+            AcountLogin userPass = new AcountLogin { UserName = Email, Password = Password };
             var json = JsonConvert.SerializeObject(userPass);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
             try
             {
-                HttpResponseMessage response = null;
-                response = await _client.PostAsync(uri, content);
+
+                var response = await _client.PostAsync(uri, content);
                 if (response.IsSuccessStatusCode)
                 {
-
                     var Otpdata = await response.Content.ReadAsStringAsync();
-                    var OtpResult = JsonConvert.DeserializeObject<ResultModels<OtpRefMessage>>(Otpdata);
-                    if (OtpResult.Message ==  ResultMessages.MessagesStatus.Success)
+                    var OtpResult = JsonConvert.DeserializeObject<ResultModels<RespondToken>>(Otpdata);
+                    if (OtpResult.Message == ResultMessages.MessagesStatus.Success)
                     {
                         try
                         {
                             ErrorMessage = " ";
-                            await Application.Current.MainPage.Navigation.PushAsync(new Views.ConfirmOTP());
+                            await Application.Current.MainPage.Navigation.PushAsync(new Views.Home());
                         }
                         catch (Exception ex)
                         {
