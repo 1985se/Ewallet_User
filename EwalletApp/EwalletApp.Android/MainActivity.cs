@@ -20,6 +20,7 @@ namespace EwalletApp.Droid
 
             base.OnCreate(savedInstanceState);
             ZXing.Mobile.MobileBarcodeScanner.Initialize(Application);
+            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             ZXing.Net.Mobile.Forms.Android.Platform.Init();          
             Plugin.InputKit.Platforms.Droid.Config.Init(this, savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
@@ -32,6 +33,11 @@ namespace EwalletApp.Droid
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             global::ZXing.Net.Mobile.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+        public override void OnBackPressed()
+        {
+            Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed);
+           
         }
     }
 }

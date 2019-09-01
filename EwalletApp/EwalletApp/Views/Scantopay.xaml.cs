@@ -20,14 +20,14 @@ namespace EwalletApp.Views
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+            //var scanner = new ZXing.Mobile.MobileBarcodeScanner();
 
-            var result = await scanner.Scan();
+            //var result = await scanner.Scan();
 
-            if (result != null)
-            {
-                DisplayAlert("Data", result.Text, "ok");
-            }
+            //if (result != null)
+            //{
+            //    DisplayAlert("Data", result.Text, "ok");
+            //}
 
         }
     }
