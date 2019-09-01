@@ -3,9 +3,11 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace EwalletApp.ViewModels
@@ -62,6 +64,10 @@ namespace EwalletApp.ViewModels
                         try
                         {
                             ErrorMessage = " ";
+                            await SecureStorage.SetAsync("Token", OtpResult.Data.FirstOrDefault().Token);
+                            await SecureStorage.SetAsync("RefreshToken", OtpResult.Data.FirstOrDefault().RefreshToken);
+                            await SecureStorage.SetAsync("Email", Email);
+
                             await Application.Current.MainPage.Navigation.PushAsync(new Views.Home());
                         }
                         catch (Exception ex)

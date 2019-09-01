@@ -2,31 +2,19 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
-using Xamarin.Forms;
 
 namespace EwalletApp.ViewModels
 {
-    public class HomeVM  : INotifyPropertyChanged
+    class TopupVM : INotifyPropertyChanged
     {
 
-        public HomeVM()
-        {
-            TopupClickCommand = new Command(TopupClick);
-           
-        }
-
-      
-        private async void TopupClick()
+        public TopupVM()
         {
 
-            await Application.Current.MainPage.Navigation.PushAsync(new Views.Topup());
+
         }
-
-    
-        public Command TopupClickCommand { get; set; }
-
-
         public event PropertyChangedEventHandler PropertyChanged;
+        
         private void OnPropertyChanged(string propertyName)
         {
             PropertyChanged(this, new PropertyChangedEventArgs(propertyName));

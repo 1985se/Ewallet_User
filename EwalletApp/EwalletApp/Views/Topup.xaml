@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EwalletApp.Views.Topup">
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label Text="เติมเงิน" 
+                   HorizontalOptions="Center"
+                   TextColor="Black" 
+                   FontSize="20"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="qrcode" 
+                   Margin="10,30,10,3"
+                   HeightRequest="150" />
+            <Label Text="ใส่จำนวนเงิน"
+                   FontSize="25"
+                   HorizontalOptions="Center"
+                   TextColor="Black"/>
+            <StackLayout Orientation="Horizontal" 
+                         Margin="10"
+                         HorizontalOptions="CenterAndExpand">
+                <Entry Placeholder="0.00" 
+                       WidthRequest="200"
+                       HorizontalTextAlignment="End"
+                   HorizontalOptions="Center"
+                   FontSize="35"/>
+                <Label Text="THB" 
+                       Margin="0,18,0,10"
+                       FontSize="15"/>
+            </StackLayout>
+
+
+            <Button Text="SIGN IN"  Grid.Column="0"
+                            CornerRadius="10"
+                            TextColor="White"
+                         
+                            VerticalOptions="EndAndExpand"
+                            Command="{Binding OnClickSingInCommand}"
+                            IsEnabled="{Binding ActiveButton}"
+                            BackgroundColor="#eaa200"
+                            Margin="50,50,50,50"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
