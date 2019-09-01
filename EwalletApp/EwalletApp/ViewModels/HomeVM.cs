@@ -12,19 +12,19 @@ namespace EwalletApp.ViewModels
         public HomeVM()
         {
             ScantopayClickCommand = new Command(ScantopayClick);
-            ScantoTopupClickCommand = new Command(ScantoTopupClick);
+           
         }
 
         private async void ScantopayClick(object obj)
         {
-            var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+            //var scanner = new ZXing.Mobile.MobileBarcodeScanner();
 
-            var result = await scanner.Scan();
+            //var result = await scanner.Scan();
 
-            if (result != null)
-            {
-               await Application.Current.MainPage.DisplayAlert("Data", result.Text, "ok");
-            }
+            //if (result != null)
+            //{
+            //   await Application.Current.MainPage.DisplayAlert("Data", result.Text, "ok");
+            //}
             //await Application.Current.MainPage.Navigation.PushAsync(new Views.Scantopay());
 
         }
