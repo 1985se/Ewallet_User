@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using RoundedBoxView.Forms.Plugin.Droid;
 
 namespace EwalletApp.Droid
 {
@@ -20,6 +21,7 @@ namespace EwalletApp.Droid
             base.OnCreate(savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            RoundedBoxViewRenderer.Init();
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
