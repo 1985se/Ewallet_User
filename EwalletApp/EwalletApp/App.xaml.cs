@@ -15,7 +15,7 @@ namespace EwalletApp
             // MainPage = new MainPage();
             LoginVM vM = new LoginVM();
             //  MainPage = new NavigationPage(new Login(vM));
-            MainPage = new NavigationPage(new Views.Home());
+            MainPage = new NavigationPage(new Views.Login(vM));
         }
 
         protected override void OnStart()

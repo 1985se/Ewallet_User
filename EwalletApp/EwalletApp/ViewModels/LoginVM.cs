@@ -12,11 +12,11 @@ namespace EwalletApp.ViewModels
 {
   public  class LoginVM : INotifyPropertyChanged
     {
-        
+        ValidateData Validate;
         public LoginVM()
         {
             OnClickSingInCommand = new Command(OnClickSingIn);
-
+            Validate = new ValidateData();
         }
 
         public Command OnClickSingInCommand { get; set; }
@@ -36,7 +36,7 @@ namespace EwalletApp.ViewModels
 
         private async void toConfirmOTP()
         {
-            await Application.Current.MainPage.Navigation.PushAsync(new Views.ConfirmOTP());
+            await Application.Current.MainPage.Navigation.PushAsync(new Views.Home());
         }
 
         private async void ValidateEmail()
@@ -109,6 +109,25 @@ namespace EwalletApp.ViewModels
         {
             get { return indicator; }
             set { indicator = value; OnPropertyChanged("Indicator"); }
+        }
+
+
+        private string password;
+
+        public string Password
+        {
+            get { return password; }
+            set { password = value;
+                PassMeter = Validate.PasswordMeter(password);
+                OnPropertyChanged("Password"); }
+        }
+
+        private string passMeter;
+
+        public string PassMeter
+        {
+            get { return passMeter; }
+            set { passMeter = value; OnPropertyChanged("PassMeter"); }
         }
 
 

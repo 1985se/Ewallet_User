@@ -17,39 +17,10 @@
                   VerticalOptions="Start">
                 <Image Source="bg" Grid.Column="0" Grid.Row="0"
                        VerticalOptions="Start"
-                       HeightRequest="300"
+                       HeightRequest="320"
                        HorizontalOptions="FillAndExpand"
                        Aspect="AspectFill"/>
-                <StackLayout Grid.Column="0" 
-                             VerticalOptions="End"
-                             HeightRequest="80"
-                             Opacity="0.7"
-                             BackgroundColor="Black"
-                             Orientation="Horizontal"
-                             HorizontalOptions="FillAndExpand"
-                             Grid.Row="0">
-                    
-                        <Label Text="ยอดเงินคงเหลือ" 
-                               FontSize="20"
-                               HorizontalOptions="StartAndExpand"
-                               VerticalOptions="CenterAndExpand"
-                               Margin="15,0,0,0"
-                               TextColor="White"/>
-                    <Label Text="3800.50" 
-                               FontSize="25"
-                           HorizontalOptions="End"
-                               VerticalOptions="CenterAndExpand"
-                               Margin="0,0,0,0"
-                               TextColor="#f0a603"/>
-                    <Label Text="THB" 
-                               FontSize="10"
-                           HorizontalOptions="End"
-                               VerticalOptions="CenterAndExpand"
-                               Margin="0,-5,10,0"
-                               TextColor="#f0a603"/>
-
-
-                </StackLayout>
+               
                 
             </Grid>
             <StackLayout Margin="10,20,10,20">
@@ -64,7 +35,7 @@
                             
                             <Image Source="qrcode" 
                                    VerticalOptions="Start" 
-                                   HeightRequest="80"
+                                   HeightRequest="50"
                                    HorizontalOptions="CenterAndExpand"/>
                             <Label Text="แสกนจ่าย"
                                    FontSize="20"
@@ -80,9 +51,9 @@
                         <StackLayout>
                             <Image Source="iphone" 
                                    VerticalOptions="Start" 
-                                   HeightRequest="80"
+                                   HeightRequest="50"
                                    HorizontalOptions="CenterAndExpand"/>
-                            <Label Text="เติมเงิน"
+                            <Label Text="Coming soon"
                                    FontSize="20"
                                    HorizontalOptions="CenterAndExpand"/>
                         </StackLayout>
@@ -96,7 +67,7 @@
                         <StackLayout>
                             <Image Source="iphone" 
                                    VerticalOptions="Start" 
-                                   HeightRequest="80"
+                                   HeightRequest="50"
                                    HorizontalOptions="CenterAndExpand"/>
                             <Label Text="Coming soon"
                                    FontSize="20"
@@ -109,7 +80,7 @@
                         <StackLayout>
                             <Image Source="iphone" 
                                    VerticalOptions="Start" 
-                                   HeightRequest="80"
+                                   HeightRequest="50"
                                    HorizontalOptions="CenterAndExpand"/>
                             <Label Text="Coming soon"
                                    FontSize="20"

@@ -36,6 +36,39 @@ namespace EwalletApp.ViewModels
 
         }
 
+        public string PasswordMeter(string pass)
+        {
+            if (pass == null)
+            {
+                return "";
+            }
+            if (pass.Length < 1)
+            {
+                return "";
+            }
+            string strongRegex =
+                   @"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})";
+            Regex re1 = new Regex(strongRegex);
+            if (re1.IsMatch(pass))
+            {
+                return "strong";
+            }
+
+            string mediumRegex =
+                    @"^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})";
+            Regex re = new Regex(mediumRegex);
+            if (re.IsMatch(pass))
+            {
+                return "medium";
+            }
+
+            return "weak";
+
+
+
+
+        }
+
         public string birthDateSet(string input)
         {
             if (input == null)

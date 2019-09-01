@@ -32,16 +32,26 @@
                     <Label Text="{Binding StatusEmailVerdify}"
                            Margin="50,0,50,0"
                            TextColor="Red"/>
-
-                    <control:RoundedEntry 
-                        Placeholder="Email"
-                        HeightRequest="55"
-                        Text="{Binding Email}"
-                           WidthRequest="300"
-                           Margin="50,5,50,20" />
                     <Label Text="{Binding ErrorMessage}" 
                            TextColor="Red"
                            Margin="50,0,0,0"/>
+                    <control:RoundedEntry 
+                        Placeholder="UserName"
+                        HeightRequest="55"
+                        Text="{Binding Email}"
+                           WidthRequest="300"
+                           Margin="50,5,50,8" />
+                  
+                    <Label Text="{Binding PassMeter}" 
+                           TextColor="Red"
+                           Margin="50,5,0,0"/>
+                    <control:RoundedEntry 
+                        Placeholder="Password"
+                        HeightRequest="55"
+                        Text="{Binding Password}"
+                           WidthRequest="300"
+                           Margin="50,0,50,20" />
+                    
 
                     <Grid>
 
