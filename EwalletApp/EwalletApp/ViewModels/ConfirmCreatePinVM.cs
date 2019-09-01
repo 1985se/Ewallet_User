@@ -6,42 +6,41 @@ using Xamarin.Forms;
 
 namespace EwalletApp.ViewModels
 {
-   public class ConfirmOtpVM : INotifyPropertyChanged
-    {        
-
+    public class ConfirmCreatePinVM : INotifyPropertyChanged
+    {
         public Command OnKeypadClickCommand { get; set; }
-        public ConfirmOtpVM()
+        public ConfirmCreatePinVM()
         {
-            OnKeypadClickCommand = new Command(OnKeypadClick);          
-            
+            OnKeypadClickCommand = new Command(OnKeypadClick);
+
         }
 
         private void OnKeypadClick(object obj)
         {
 
             var st = obj.ToString();
-            if(OtpConfirm == null )
+            if (OtpConfirm == null)
             {
                 OtpConfirm = "";
-            }            
-                if (st == "Del" && OtpConfirm.Length > 0)
-                {
-                    OtpConfirm = OtpConfirm.Remove(OtpConfirm.Length - 1);
+            }
+            if (st == "Del" && OtpConfirm.Length > 0)
+            {
+                OtpConfirm = OtpConfirm.Remove(OtpConfirm.Length - 1);
                 passRunning(OtpConfirm);
-                }
-                else if (st != "Del")
-                {
-                    OtpConfirm += st;
-                passRunning(OtpConfirm);                
-                }
+            }
+            else if (st != "Del")
+            {
+                OtpConfirm += st;
+                passRunning(OtpConfirm);
+            }
         }
 
 
         private void passRunning(string pass)
         {
             int passCount = pass.Length;
-            switch(passCount)
-            {                
+            switch (passCount)
+            {
                 case 1:
                     Bg0 = Color.Gray;
                     Bg1 = Bg2 = Bg3 = Bg4 = Bg5 = Color.White;
@@ -60,7 +59,7 @@ namespace EwalletApp.ViewModels
                     break;
                 case 5:
                     Bg0 = Bg1 = Bg2 = Bg3 = Bg4 = Color.Gray;
-                     Bg5 = Color.White;
+                    Bg5 = Color.White;
                     break;
                 case 6: Bg0 = Bg1 = Bg2 = Bg3 = Bg4 = Bg5 = Color.Gray; break;
                 default: Bg0 = Bg1 = Bg2 = Bg3 = Bg4 = Bg5 = Color.White; break;
@@ -69,7 +68,7 @@ namespace EwalletApp.ViewModels
         }
 
 
-        
+
 
 
         private Color bg0;
@@ -97,7 +96,7 @@ namespace EwalletApp.ViewModels
         }
         private Color bg3;
 
-        public Color Bg3 
+        public Color Bg3
         {
             get { return bg3; }
             set { bg3 = value; OnPropertyChanged("Bg3"); }
@@ -127,7 +126,7 @@ namespace EwalletApp.ViewModels
             set { otpConfirm = value; OnPropertyChanged("OtpConfirm"); }
         }
 
-      
+
 
 
         public event PropertyChangedEventHandler PropertyChanged;

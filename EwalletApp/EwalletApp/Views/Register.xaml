@@ -4,16 +4,23 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:bd="clr-namespace:EwalletApp.ViewModels"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             NavigationPage.HasNavigationBar="False"             
              x:Class="EwalletApp.Views.Register">
+    <ContentPage.BindingContext>
+        <bd:RegisterVM/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <Grid HorizontalOptions="CenterAndExpand" 
+            <Grid HorizontalOptions="Fill" 
+                  HeightRequest="30"
                   VerticalOptions="Start">
                 <!--<Grid.GestureRecognizers>
                     <TapGestureRecognizer Command=""/>
                 </Grid.GestureRecognizers>-->
-                <Image Source="arrowleft"
-                       Grid.Column="0"
+                <Image Source="left48"
+                       Grid.Column="0"                       
                        HorizontalOptions="Start"
                        VerticalOptions="Start"
                        Aspect="AspectFit"
@@ -29,14 +36,97 @@
                        TextColor="Black"
                        Margin="0,20,0,0"/>
             </Grid>
-            <Frame HasShadow="True" 
+            <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout HorizontalOptions="Fill" WidthRequest="300" >
+                    <Frame HasShadow="True"                            
+                           WidthRequest="300"
+                           CornerRadius="10"
+                            Margin="5,5,5,5"
+                   HorizontalOptions="Center"                   
                    BorderColor="Black">
-                <StackLayout >
-                    <Label Text="ชื่อ"/>
-                    <Entry Placeholder="ชื่อ"/>
+                        <StackLayout Margin="5,0,0,0">
+                            <Label Text="ชื่อจริง"/>
+                            <Entry Text="{Binding Name}"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame HasShadow="True"                            
+                           WidthRequest="300"
+                           CornerRadius="10"
+                           Margin="5,5,5,5"
+                   HorizontalOptions="Center"                   
+                   BorderColor="Black">
+                        <StackLayout Margin="5,0,0,0">
+                            <Label Text="นามสกุล"/>
+                            <Entry Text="{Binding LastName}"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame HasShadow="True"                            
+                           WidthRequest="300"
+                           CornerRadius="10"
+                           Margin="5,5,5,5"
+                   HorizontalOptions="Center"                   
+                   BorderColor="Black">
+                        <StackLayout Margin="5,0,0,0">
+                            <Label Text="วัน/เดือน/ปี เกิด"/>
+                            <Entry Keyboard="Numeric" Text="{Binding Birthday}"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame HasShadow="True"                            
+                           WidthRequest="300"
+                           CornerRadius="10"
+                           Margin="5,5,5,5"
+                   HorizontalOptions="Center"                   
+                   BorderColor="Black">
+                        <StackLayout Margin="5,0,0,0">
+                            <Label Text="หมายเลขโทรศัพท์มือถือ"/>
+                            <Entry Keyboard="Telephone" Text="{Binding Tel}" />
+                        </StackLayout>
+                    </Frame>
+                    <Frame HasShadow="True"                            
+                           WidthRequest="300"
+                           CornerRadius="10"
+                           Margin="5,5,5,5"
+                   HorizontalOptions="Center"                   
+                   BorderColor="Black">
+                        <StackLayout Margin="5,0,0,0">
+                            <Label Text="เพศ"/>
+                            <input:RadioButtonGroupView Orientation="Horizontal" HorizontalOptions="Center">
+                                <input:RadioButton Text="ชาย" Margin="20,0,20,0" Color="Gray" IsChecked="True"/>
+                                <input:RadioButton Text="หญิง" Margin="20,0,20,0" Color="Gray" />                                
+                            </input:RadioButtonGroupView>
+                        </StackLayout>
+                    </Frame>
+                    <Frame HasShadow="True"                            
+                           WidthRequest="300"
+                           CornerRadius="10"
+                           Margin="5,5,5,5"
+                   HorizontalOptions="Center"                   
+                   BorderColor="Black">
+                        <StackLayout Margin="5,0,0,0">
+                            <Label Text="Email"/>
+                            <Entry IsReadOnly="True" Text="{Binding Email}" />
+                        </StackLayout>
+                    </Frame>
+
+                    <Grid Margin="20,50,20,50">
+                        <Button Text="ถัดไป"  
+                            Grid.Column="0"
+                            CornerRadius="10"
+                            TextColor="White"   
+                                IsEnabled="{Binding ActiveButton}"
+                            HorizontalOptions="Center" 
+                            WidthRequest="300"
+                            BackgroundColor="#eaa200" />
+                        <ActivityIndicator Color="White" 
+                                           Grid.Column="0"
+                                           IsRunning="True" 
+                                           IsVisible="{Binding Indicator }"/>
+                    </Grid>
+
                 </StackLayout>
-                
-            </Frame>
+            </ScrollView>
+           
+           
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
