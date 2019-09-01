@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using Android.Webkit;
 using Foundation;
 
 using UIKit;
@@ -26,7 +26,7 @@ namespace EwalletApp.iOS
             global::Xamarin.Forms.Forms.Init();
            
             LoadApplication(new App());
-
+            Plugin.InputKit.Platforms.iOS.Config.Init();
             return base.FinishedLaunching(app, options);
         }
     }
