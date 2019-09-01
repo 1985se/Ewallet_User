@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
-using RoundedBoxView.Forms.Plugin.iOSUnified;
+
 using UIKit;
 
 namespace EwalletApp.iOS
@@ -24,7 +24,7 @@ namespace EwalletApp.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            RoundedBoxViewRenderer.Init();
+           
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

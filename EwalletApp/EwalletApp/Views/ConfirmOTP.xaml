@@ -4,9 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             xmlns:abstractions="clr-namespace:RoundedBoxView.Forms.Plugin.Abstractions;assembly=RoundedBoxView.Forms.Plugin.Abstractions"
+            
              NavigationPage.HasNavigationBar="False"
+             xmlns:bd="clr-namespace:EwalletApp.ViewModels"
              x:Class="EwalletApp.Views.ConfirmOTP">
+    <ContentPage.BindingContext>
+        <bd:ConfirmOtpVM/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
             <Grid HorizontalOptions="CenterAndExpand" 
@@ -56,71 +60,67 @@
                            VerticalOptions="Center"
                            TextColor="LightGray"/>
                     <Grid WidthRequest="250"
+                          HeightRequest="25"
                           Margin="0,10,0,10"
                           HorizontalOptions="Center" 
                           VerticalOptions="Center">
-                        <abstractions:RoundedBoxView
-                            Grid.Column="0"
+                        <Frame Grid.Column="0"
                             HorizontalOptions="Start"
                             VerticalOptions="Start"
-                            BackgroundColor="LightGray" 
-                            HeightRequest="24" 
-                            WidthRequest="24"  
-                            BorderColor="Black" 
-                            CornerRadius="12" 
-                            BorderThickness="2"/>
-                        <abstractions:RoundedBoxView
-                            Grid.Column="1"
-                            HorizontalOptions="Center"
+                            BackgroundColor="{Binding Bg0}" 
+                            HeightRequest="20" 
+                            WidthRequest="20"  
+                              Padding="2"
+                            BorderColor="Black"                               
+                            CornerRadius="10" />
+                        <Frame Grid.Column="1"
+                            HorizontalOptions="Start"
                             VerticalOptions="Start"
-                            BackgroundColor="LightGray" 
-                            HeightRequest="24" 
-                            WidthRequest="24"  
-                            BorderColor="Black" 
-                            CornerRadius="12" 
-                            BorderThickness="2"/>
-                        <abstractions:RoundedBoxView
-                            Grid.Column="2"
-                            HorizontalOptions="Center"
+                            BackgroundColor="{Binding Bg1}" 
+                            HeightRequest="20" 
+                            WidthRequest="20"  
+                              Padding="2"
+                            BorderColor="Black"                               
+                            CornerRadius="10" />
+                        <Frame Grid.Column="2"
+                            HorizontalOptions="Start"
                             VerticalOptions="Start"
-                            BackgroundColor="LightGray" 
-                            HeightRequest="24" 
-                            WidthRequest="24"  
-                            BorderColor="Black" 
-                            CornerRadius="12" 
-                            BorderThickness="2"/>
-                        <abstractions:RoundedBoxView
-                            Grid.Column="3"
-                            HorizontalOptions="Center"
+                            BackgroundColor="{Binding Bg2}" 
+                            HeightRequest="20" 
+                            WidthRequest="20"  
+                              Padding="2"
+                            BorderColor="Black"                               
+                            CornerRadius="10" />
+                        <Frame Grid.Column="3"
+                            HorizontalOptions="Start"
                             VerticalOptions="Start"
-                            BackgroundColor="LightGray" 
-                            HeightRequest="24" 
-                            WidthRequest="24"  
-                            BorderColor="Black" 
-                            CornerRadius="12" 
-                            BorderThickness="2"/>
-                        <abstractions:RoundedBoxView
-                            Grid.Column="4"
-                            HorizontalOptions="Center"
+                            BackgroundColor="{Binding Bg3}" 
+                            HeightRequest="20" 
+                            WidthRequest="20"  
+                              Padding="2"
+                            BorderColor="Black"                               
+                            CornerRadius="10" />
+                        <Frame Grid.Column="4"
+                            HorizontalOptions="Start"
                             VerticalOptions="Start"
-                            BackgroundColor="LightGray" 
-                            HeightRequest="24" 
-                            WidthRequest="24"  
-                            BorderColor="Black" 
-                            CornerRadius="12" 
-                            BorderThickness="2"/>
-                        <abstractions:RoundedBoxView
-                            Grid.Column="5"
-                            HorizontalOptions="Center"
+                            BackgroundColor="{Binding Bg4}" 
+                            HeightRequest="20" 
+                            WidthRequest="20"  
+                              Padding="2"
+                            BorderColor="Black"                               
+                            CornerRadius="10" />
+                        <Frame Grid.Column="5"
+                            HorizontalOptions="Start"
                             VerticalOptions="Start"
-                            BackgroundColor="LightGray" 
-                            HeightRequest="24" 
-                            WidthRequest="24"  
-                            BorderColor="Black" 
-                            CornerRadius="12" 
-                            BorderThickness="2"/>
-                     
+                            BackgroundColor="{Binding Bg5}" 
+                            HeightRequest="20" 
+                            WidthRequest="20"  
+                              Padding="2"
+                            BorderColor="Black"                               
+                            CornerRadius="10" />
+
                     </Grid>
+                   
                     <StackLayout VerticalOptions="Start">
                         <Label Text="ส่ง OTP อีกครั้ง" 
                                Margin="0,10,0,0"
@@ -131,9 +131,11 @@
 
 
                 </StackLayout>
-             
+
+               
 
             </ScrollView>
+            <Label Margin="50,0,0,0" Text="{Binding OtpConfirm}" TextColor="Red"/>
             <StackLayout BackgroundColor="#EAA200" 
                          VerticalOptions="End"
                          Margin="0,0,0,0"
@@ -150,6 +152,8 @@
                             TextColor="White"
                             FontAttributes="Bold"
                             FontSize="25"
+                            Command="{Binding OnKeypadClickCommand}"
+                            CommandParameter="1"
                             BackgroundColor="#EAA200"/>
                     <Button Text="2" 
                             Grid.Row="0"
@@ -157,6 +161,8 @@
                              TextColor="White"
                             FontAttributes="Bold"
                             FontSize="25"
+                            Command="{Binding OnKeypadClickCommand}"
+                            CommandParameter="2"
                             BackgroundColor="#EAA200"/>
                     <Button Text="3" 
                             Grid.Row="0"
@@ -164,6 +170,8 @@
                              TextColor="White"
                             FontAttributes="Bold"
                             FontSize="25"
+                            Command="{Binding OnKeypadClickCommand}"
+                            CommandParameter="3"
                             BackgroundColor="#EAA200"/>
                     <!--row 1-->
                     <Button Text="4" 
@@ -172,6 +180,8 @@
                              TextColor="White"
                             FontAttributes="Bold"
                             FontSize="25"
+                            Command="{Binding OnKeypadClickCommand}"
+                            CommandParameter="4"
                             BackgroundColor="#EAA200"/>
                     <Button Text="5" 
                             Grid.Row="1"
@@ -179,6 +189,8 @@
                              TextColor="White"
                             FontAttributes="Bold"
                             FontSize="25"
+                            Command="{Binding OnKeypadClickCommand}"
+                            CommandParameter="5"
                             BackgroundColor="#EAA200"/>
                     <Button Text="6" 
                             Grid.Row="1"
@@ -186,28 +198,36 @@
                              TextColor="White"
                             FontAttributes="Bold"
                             FontSize="25"
+                            Command="{Binding OnKeypadClickCommand}"
+                            CommandParameter="6"
                             BackgroundColor="#EAA200"/>
                     <!--row 3-->
-                    <Button Text="6" 
+                    <Button Text="7" 
                             Grid.Row="2"
                             Grid.Column="0"
                              TextColor="White"
                             FontAttributes="Bold"
                             FontSize="25"
+                            Command="{Binding OnKeypadClickCommand}"
+                            CommandParameter="7"
                             BackgroundColor="#EAA200"/>
-                    <Button Text="7" 
+                    <Button Text="8" 
                             Grid.Row="2"
                             Grid.Column="1"
                              TextColor="White"
                             FontAttributes="Bold"
                             FontSize="25"
+                            Command="{Binding OnKeypadClickCommand}"
+                            CommandParameter="8"
                             BackgroundColor="#EAA200"/>
-                    <Button Text="8" 
+                    <Button Text="9" 
                             Grid.Row="2"
                             Grid.Column="2"
                              TextColor="White"
                             FontAttributes="Bold"
                             FontSize="25"
+                            Command="{Binding OnKeypadClickCommand}"
+                            CommandParameter="9"
                             BackgroundColor="#EAA200"/>
                     <!--row 3-->
                     <Button Text=" " 
@@ -224,6 +244,8 @@
                              TextColor="White"
                             FontSize="25"
                             FontAttributes="Bold"
+                            Command="{Binding OnKeypadClickCommand}"
+                            CommandParameter="0"
                             BackgroundColor="#EAA200"/>
                     <Button Text="←" 
                             Grid.Row="3"
@@ -231,6 +253,8 @@
                              TextColor="White"
                             FontSize="30"
                             FontAttributes="Bold"
+                            Command="{Binding OnKeypadClickCommand}"
+                            CommandParameter="Del"
                             BackgroundColor="#EAA200"/>
 
 
