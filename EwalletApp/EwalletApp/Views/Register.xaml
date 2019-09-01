@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EwalletApp.Views.Register">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid HorizontalOptions="CenterAndExpand" 
+                  VerticalOptions="Start">
+                <!--<Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command=""/>
+                </Grid.GestureRecognizers>-->
+                <Image Source="arrowleft"
+                       Grid.Column="0"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Start"
+                       Aspect="AspectFit"
+                       HeightRequest="40"
+                       WidthRequest="30"
+                       Margin="15,10,0,0"/>
+                <Label Text="ลงทะเบียน" 
+                        Grid.Column="0"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="Center"
+                       FontSize="15"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       Margin="0,20,0,0"/>
+            </Grid>
+            <Frame HasShadow="True" 
+                   BorderColor="Black">
+                <StackLayout >
+                    <Label Text="ชื่อ"/>
+                    <Entry Placeholder="ชื่อ"/>
+                </StackLayout>
+                
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
