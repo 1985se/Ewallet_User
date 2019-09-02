@@ -4,7 +4,11 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:db="clr-namespace:EwalletApp.ViewModels"
              x:Class="EwalletApp.Views.Topup">
+    <ContentPage.BindingContext>
+        <db:TopupVM/>
+    </ContentPage.BindingContext>
     <NavigationPage.TitleView>
         <StackLayout>
             <Label Text="เติมเงิน" 
@@ -27,10 +31,12 @@
                          HorizontalOptions="CenterAndExpand">
                 <Entry Placeholder="0.00" 
                        WidthRequest="200"
+                       Text="{Binding  Amount}"
                        HorizontalTextAlignment="End"
                    HorizontalOptions="Center"
                    FontSize="35"/>
                 <Label Text="THB" 
+                       
                        Margin="0,18,0,10"
                        FontSize="15"/>
             </StackLayout>
@@ -41,7 +47,7 @@
                             TextColor="White"
                          
                             VerticalOptions="EndAndExpand"
-                            Command="{Binding OnClickSingInCommand}"
+                            Command="{Binding  TopupClickCommand}"
                             IsEnabled="{Binding ActiveButton}"
                             BackgroundColor="#eaa200"
                             Margin="50,50,50,50"/>
